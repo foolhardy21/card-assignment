@@ -14,8 +14,13 @@ import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import Box from '@mui/material/Box';
 
 
-const CardComponent = () => {
+const CardComponent = ({ setIsCardVisible }) => {
     const [progress, setProgress] = useState(0)
+    const [isClosingDateInputDisabled, setClosingDateInputDisabled] = useState(true)
+
+    const handleCardEdit = () => {
+        setClosingDateInputDisabled(!isClosingDateInputDisabled)
+    }
 
     return (
         <Card sx={{ width: 2 / 4, display: 'flex', flexDirection: 'column' }}>
@@ -28,6 +33,7 @@ const CardComponent = () => {
                         Closing Date:
                     </Typography>
                     <TextField
+                        disabled={isClosingDateInputDisabled}
                         id="datetime-local"
                         label="Closing"
                         type="datetime-local"
@@ -45,10 +51,10 @@ const CardComponent = () => {
             </CardContent>
             <CardActions sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                 <Box>
-                    <Button>
+                    <Button onClick={handleCardEdit}>
                         <EditIcon />
                     </Button>
-                    <Button>
+                    <Button onClick={() => setIsCardVisible(false)}>
                         <DeleteIcon />
                     </Button>
                 </Box>
