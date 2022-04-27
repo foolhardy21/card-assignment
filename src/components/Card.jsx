@@ -59,13 +59,13 @@ const CardComponent = ({ setIsCardVisible }) => {
                     </Button>
                 </Box>
                 <Box>
-                    <Button>
+                    <Button onClick={() => setProgress(30)}>
                         <FileUploadIcon />
                     </Button>
-                    <Button>
+                    <Button onClick={() => setProgress(65)}>
                         <FileDownloadDoneIcon />
                     </Button>
-                    <Button>
+                    <Button onClick={() => setProgress(100)}>
                         <AssignmentTurnedInIcon />
                     </Button>
                 </Box>
