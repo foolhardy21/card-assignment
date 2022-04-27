@@ -16,10 +16,10 @@ import FileName from './FileName';
 import CardDeleteBtn from './CardDeleteBtn';
 
 const CardComponent = () => {
-    const { setIsCardVisible, progress, setProgress } = useCard()
+    const { progress, setProgress } = useCard()
 
     return (
-        <Card sx={{ width: 2 / 4, display: 'flex', flexDirection: 'column' }}>
+        <Card sx={{ width: 1.5 / 4, display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ backgroundColor: 'lightblue', p: 0 }}>
                 <CardTitle />
                 <ClosingDate />
